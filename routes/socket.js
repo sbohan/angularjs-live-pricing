@@ -2,14 +2,19 @@
  * Serve content over a socket
  */
 
-module.exports = function (socket) {
+
+
+module.exports = function (socket, tick) {
   socket.emit('send:name', {
-    name: 'Bob'
+    name: 'Shaun'
   });
 
-  setInterval(function () {
-    socket.emit('send:time', {
-      time: (new Date()).toString()
-    });
-  }, 1000);
+  setInterval(function(){
+    if (tick !== last) {
+      socket.emit('send:time', tick);
+      last = tick;
+    }
+  }, 0.001);
+
+
 };

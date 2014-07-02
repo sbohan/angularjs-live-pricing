@@ -1,0 +1,40 @@
+<div class="instrument_container" ng-if="prices.length >0 && spreads.length >0">
+	<div class="instrument_name">{{displayName}}</div>
+	<div class="prices">
+		<div class="col-md-6 col-xs-6">
+			<div class="price bid">
+				<div ng-bind-html="bid | formatPrice"></div>
+				<span class="action-text">Sell</span>
+			</div>
+		</div>
+		<div class="col-md-6 col-xs-6">
+			<div class="price ask">
+				<div ng-bind-html="ask | formatPrice"></div>
+				<span class="action-text">Buy</span>
+			</div>
+		</div>
+	</div>
+	<nvd3-line-chart data="prices"
+			id="priceChart-{{instrument}}"
+		    showXAxis="true"
+		    showYAxis="true"
+		    tooltips="true"
+		    interactive="true"
+		    color="colorFunction()"
+		    xAxisTickFormat="xAxisTickFormatFunction()"
+		    yAxisTickFormat="yAxisTickFormatFunction()"
+		    margin="{left:70, top:40, bottom:40, right:50}"
+		    height="300"
+		    forceY="[]"
+		    objectequality="true"></nvd3-line-chart>
+
+	<nvd3-line-chart data="spreads"
+		id="spreadsChart-{{instrument}}"
+	    showYAxis="true"
+	    tooltips="true"
+	    interactive="true"
+	    height="200"
+	    isArea="true"
+	    xAxisTickFormat="xAxisTickFormatFunction()"
+	    objectequality="true"></nvd3-line-chart>
+</div>

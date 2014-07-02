@@ -1,2 +1,4 @@
-p This is the partial for view 1.
-p The current time is {{time}}
+div.container-fluid
+    div.row
+        div(ng-repeat="instrument in selectedInstruments").col-md-4.col-xs-12
+            sb-instrument-panel(instrument="instrument", display-name="getProductDisplayName(instrument)")

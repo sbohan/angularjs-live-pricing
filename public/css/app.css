@@ -1,5 +1,7 @@
 /* app css stylesheet */
-
+body {
+  background-color: #1d1e19;
+}
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -27,4 +29,60 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0;
+}
+
+.instrument_container {
+  border: 2px solid #5d5d5e;
+  /*background-color: #373535;*/
+}
+
+.instrument_name {
+  text-align: center;
+  font-size: 16pt;
+  color: #fff;
+  background-color: #373535;
+  padding: 5px;
+  border-bottom: 1px solid #5d5d5e;
+  margin-bottom: 10px;
+}
+
+.instrument_container svg {
+  height: initial !important;
+  width: initial !important;
+}
+.prices {
+  /*margin: auto;*/
+}
+.action-text {
+  font-size: 11pt;
+  text-transform: uppercase;
+}
+
+.price {
+  display: inline-block;
+  -webkit-border-radius: 10px;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  font-size: 13pt;
+  width: 100%;
+}
+.sigFig {
+  display: inline-block;
+  font-size: 26pt;
+  font-weight: 400;
+  padding: 0 3px;
+}
+.bid {
+  border: 2px solid #AA3939;
+  background-color: #ff9a9a; background-image: -webkit-gradient(linear, left top, left bottom, from(#ff9a9a), to(#ff4040));
+}
+
+.ask {
+  border: 2px solid #384155;
+  background-color: #a7cfdf; background-image: -webkit-gradient(linear, left top, left bottom, from(#a7cfdf), to(#23538a));
+}
+
+.nv-axis {
+  color: #fff;
 }
